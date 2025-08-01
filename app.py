@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 
 # --- Load Models Directly from Local Files ---
 try:
-    clf_model = joblib.load("models/classifier_new.pkl")  # ✅ compressed classifier file
+    clf_model = joblib.load("classifier_new.pkl")  # ✅ compressed classifier file
     reg_model = joblib.load("models/regressor.pkl")              # ✅ regressor file (assumed already local)
 except Exception as e:
     st.error(f"Error loading models: {e}. Please check your model files.")
@@ -98,3 +98,4 @@ if submitted:
     fig_pie.update_layout(title_text="🧠 Purchase Prediction Breakdown")
     fig_pie.update_traces(marker=dict(colors=["#00CC96", "#FF6347"]))
     st.plotly_chart(fig_pie, use_container_width=True)
+
